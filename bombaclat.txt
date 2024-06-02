@@ -1,0 +1,1389 @@
+1. Hostel Application Web Page
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Hostel Application Form</h1>
+    <form id="hostelForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('hostelForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    
+    if (name === "" || age === "" || gender === "" || email === "" || phone === "") {
+        alert("All fields are required.");
+        return;
+    }
+    
+    if (isNaN(age) || age <= 0) {
+        alert("Please enter a valid age.");
+        return;
+    }
+    
+    alert("Form submitted successfully!");
+});
+
+
+
+2. Hospital Management Web Page
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Hospital Management Form</h1>
+    <form id="hospitalForm">
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" required>
+        <br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br>
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" required>
+        <br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+h1 {
+    color: #343a40;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('hospitalForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const patientName = document.getElementById('patientName').value;
+    const dob = document.getElementById('dob').value;
+    const contact = document.getElementById('contact').value;
+    const address = document.getElementById('address').value;
+    
+    if (patientName === "" || dob === "" || contact === "" || address === "") {
+        alert("All fields are required.");
+        return;
+    }
+    
+    if (contact.length < 10) {
+        alert("Please enter a valid contact number.");
+        return;
+    }
+    
+    alert("Form submitted successfully!");
+});
+3. Student Registration System
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form id="registrationForm">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required>
+        <br>
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const studentName = document.getElementById('studentName').value;
+    const course = document.getElementById('course').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    
+    if (studentName === "" || course === "" || email === "" || phone === "") {
+        alert("All fields are required.");
+        return;
+    }
+    
+    alert("Form submitted successfully!");
+});
+Due to space constraints, I provided the first three examples. If you need the code for the other projects, please let me know, and I will continue to provide them.
+
+give code for all
+ChatGPT
+Alright, I'll continue with the rest of the projects. Below are the complete implementations for each of the projects you requested.
+
+4. Car Service Center Web Page
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Service Center</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Car Service Center</h1>
+    <div class="gallery">
+        <img src="car1.jpg" alt="Car 1">
+        <img src="car2.jpg" alt="Car 2">
+        <img src="car3.jpg" alt="Car 3">
+    </div>
+    <form id="serviceForm">
+        <label for="carModel">Car Model:</label>
+        <input type="text" id="carModel" name="carModel" required>
+        <br>
+        <label for="servicePackage">Service Package:</label>
+        <select id="servicePackage" name="servicePackage" required>
+            <option value="">Select</option>
+            <option value="basic">Basic</option>
+            <option value="premium">Premium</option>
+            <option value="deluxe">Deluxe</option>
+        </select>
+        <br>
+        <label for="ownerName">Owner's Name:</label>
+        <input type="text" id="ownerName" name="ownerName" required>
+        <br>
+        <label for="contactNumber">Contact Number:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 5px;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('serviceForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const carModel = document.getElementById('carModel').value;
+    const servicePackage = document.getElementById('servicePackage').value;
+    const ownerName = document.getElementById('ownerName').value;
+    const contactNumber = document.getElementById('contactNumber').value;
+    
+    if (carModel === "" || servicePackage === "" || ownerName === "" || contactNumber === "") {
+        alert("All fields are required.");
+        return;
+    }
+    
+    alert("Form submitted successfully!");
+});
+5. Flower Shop Web Page
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Flower Shop</h1>
+    <div class="gallery">
+        <img src="flower1.jpg" alt="Flower 1">
+        <img src="flower2.jpg" alt="Flower 2">
+        <img src="flower3.jpg" alt="Flower 3">
+    </div>
+    <form id="orderForm">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="customerName" required>
+        <br>
+        <label for="bouquetType">Bouquet Type:</label>
+        <select id="bouquetType" name="bouquetType" required>
+            <option value="">Select</option>
+            <option value="roses">Roses</option>
+            <option value="tulips">Tulips</option>
+            <option value="mixed">Mixed</option>
+        </select>
+        <br>
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" required></textarea>
+        <br>
+        <label for="contactNumber">Contact Number:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #eaf6f6;
+}
+
+h1 {
+    color: #2d3436;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 5px;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #b2bec3;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #00b894;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #008f72;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const customerName = document.getElementById('customerName').value;
+    const bouquetType = document.getElementById('bouquetType').value;
+    const address = document.getElementById('address').value;
+    const contactNumber = document.getElementById('contactNumber').value;
+    
+    if (customerName === "" || bouquetType === "" || address === "" || contactNumber === "") {
+        alert("All fields are required.");
+        return;
+    }
+    
+    alert("Form submitted successfully!");
+});
+6. E-commerce Product Page
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Product Page</h1>
+    <div class="product">
+        <img src="product.jpg" alt="Product Image">
+        <h2>Product Name</h2>
+        <p>Product description goes here. It is a brief detail about the product.</p>
+        <form id="purchaseForm">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required min="1">
+            <br>
+            <button type="submit">Purchase</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.product {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('purchaseForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const customerName = document.getElementById('customerName').value;
+    const email = document.getElementById('email').value;
+    const quantity = document.getElementById('quantity').value;
+    
+    if (customerName === "" || email === "" || quantity === "" || quantity <= 0) {
+        alert("All fields are required and quantity must be at least 1.");
+        return;
+    }
+    
+    alert("Purchase completed successfully!");
+});
+7. Interactive Quiz Application
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What is the capital of France?</p>
+            <label><input type="radio" name="q1" value="Paris"> Paris</label>
+            <label><input type="radio" name="q1" value="London"> London</label>
+            <label><input type="radio" name="q1" value="Berlin"> Berlin</label>
+        </div>
+        <div class="question">
+            <p>2. Who wrote 'Romeo and Juliet'?</p>
+            <label><input type="radio" name="q2" value="Shakespeare"> Shakespeare</label>
+            <label><input type="radio" name="q2" value="Hemingway"> Hemingway</label>
+            <label><input type="radio" name="q2" value="Tolstoy"> Tolstoy</label>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #dff0d8;
+    border-radius: 5px;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('quizForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    
+    let score = 0;
+    if (q1 && q1.value === "Paris") score++;
+    if (q2 && q2.value === "Shakespeare") score++;
+    
+    document.getElementById('result').innerText = `You got ${score} out of 2 correct.`;
+});
+8. Survey Form
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Survey</h1>
+    <form id="surveyForm">
+        <div class="question">
+            <p>How satisfied are you with our service?</p>
+            <label><input type="radio" name="q1" value="Very Satisfied"> Very Satisfied</label>
+            <label><input type="radio" name="q1" value="Satisfied"> Satisfied</label>
+            <label><input type="radio" name="q1" value="Neutral"> Neutral</label>
+            <label><input type="radio" name="q1" value="Dissatisfied"> Dissatisfied</label>
+            <label><input type="radio" name="q1" value="Very Dissatisfied"> Very Dissatisfied</label>
+        </div>
+        <div class="question">
+            <p>Rate our customer service:</p>
+            <label><input type="radio" name="q2" value="1"> 1</label>
+            <label><input type="radio" name="q2" value="2"> 2</label>
+            <label><input type="radio" name="q2" value="3"> 3</label>
+            <label><input type="radio" name="q2" value="4"> 4</label>
+            <label><input type="radio" name="q2" value="5"> 5</label>
+        </div>
+        <div class="question">
+            <p>Additional comments:</p>
+            <textarea name="comments" rows="4"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #dff0d8;
+    border-radius: 5px;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('surveyForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const comments = document.querySelector('textarea[name="comments"]').value;
+    
+    let resultText = "Thank you for your feedback.\n";
+    if (q1) resultText += `Satisfaction: ${q1.value}\n`;
+    if (q2) resultText += `Rating: ${q2.value}\n`;
+    resultText += `Comments: ${comments}\n`;
+    
+    document.getElementById('result').innerText = resultText;
+});
+9. True or False Quiz
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True or False Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>True or False Quiz</h1>
+    <form id="trueFalseQuiz">
+        <div class="question">
+            <p>1. The sky is blue.</p>
+            <label><input type="radio" name="q1" value="true"> True</label>
+            <label><input type="radio" name="q1" value="false"> False</label>
+        </div>
+        <div class="question">
+            <p>2. The earth is flat.</p>
+            <label><input type="radio" name="q2" value="true"> True</label>
+            <label><input type="radio" name="q2" value="false"> False</label>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #dff0d8;
+    border-radius: 5px;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+document.getElementById('trueFalseQuiz').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    
+    let score = 0;
+    if (q1 && q1.value === "true") score++;
+    if (q2 && q2.value === "false") score++;
+    
+    document.getElementById('result').innerText = `You got ${score} out of 2 correct.`;
+});
+10. Grocery Application with AngularJS
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en" ng-app="groceryApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="GroceryController">
+    <h1>Grocery Application</h1>
+    <form name="groceryForm" ng-submit="submitForm()" novalidate>
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="customerName" ng-model="customerName" required>
+        <span ng-show="groceryForm.customerName.$touched && groceryForm.customerName.$invalid">Customer name is required.</span>
+        <br>
+        <label for="groceryList">Grocery List:</label>
+        <textarea id="groceryList" name="groceryList" ng-model="groceryList" required></textarea>
+        <span ng-show="groceryForm.groceryList.$touched && groceryForm.groceryList.$invalid">Grocery list is required.</span>
+        <br>
+        <button type="submit" ng-disabled="groceryForm.$invalid">Submit</button>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+span {
+    color: red;
+    font-size: 12px;
+}
+JavaScript (scripts.js):
+
+javascript
+Copy code
+angular.module('groceryApp', [])
+.controller('GroceryController', ['$scope', function($scope) {
+    $scope.submitForm = function() {
+        if ($scope.groceryForm.$valid) {
+            alert("Form submitted successfully!");
+        } else {
+            alert("Please fill in all the required fields.");
+        }
+    };
+}]);
+
+
+
+11. Tourism Application with HTML, CSS, and AngularJS
+HTML (index.html):
+html
+Copy code
+<!DOCTYPE html>
+<html ng-app="tourismApp">
+<head>
+    <title>Tourism Application</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Explore Beautiful Destinations</h1>
+    </div>
+    <div class="content">
+        <form name="tourismForm" ng-submit="submitForm()" novalidate>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" ng-model="user.name" required>
+            <span ng-show="tourismForm.name.$touched && tourismForm.name.$invalid">Name is required.</span>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" ng-model="user.email" required>
+            <span ng-show="tourismForm.email.$touched && tourismForm.email.$invalid">Valid email is required.</span>
+            <br>
+            <label for="destination">Destination:</label>
+            <select id="destination" name="destination" ng-model="user.destination" required>
+                <option value="">Select Destination</option>
+                <option value="paris">Paris</option>
+                <option value="new_york">New York</option>
+                <option value="tokyo">Tokyo</option>
+            </select>
+            <span ng-show="tourismForm.destination.$touched && tourismForm.destination.$invalid">Destination is required.</span>
+            <br>
+            <button type="submit" ng-disabled="tourismForm.$invalid">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+CSS (styles.css):
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.content {
+    margin: 2em auto;
+    width: 80%;
+    background-color: white;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+input, select, button {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #cccccc;
+}
+AngularJS (app.js):
+javascript
+Copy code
+angular.module('tourismApp', [])
+.controller('FormController', function($scope) {
+    $scope.user = {};
+
+    $scope.submitForm = function() {
+        if ($scope.tourismForm.$valid) {
+            alert('Form submitted successfully!');
+        }
+    };
+});
+12. Complaint Management Application with HTML, CSS, and AngularJS
+HTML (index.html):
+html
+Copy code
+<!DOCTYPE html>
+<html ng-app="complaintApp">
+<head>
+    <title>Complaint Management Application</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Submit Your Complaint</h1>
+    </div>
+    <div class="content">
+        <form name="complaintForm" ng-submit="submitForm()" novalidate>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" ng-model="user.name" required>
+            <span ng-show="complaintForm.name.$touched && complaintForm.name.$invalid">Name is required.</span>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" ng-model="user.email" required>
+            <span ng-show="complaintForm.email.$touched && complaintForm.email.$invalid">Valid email is required.</span>
+            <br>
+            <label for="complaint">Complaint:</label>
+            <textarea id="complaint" name="complaint" ng-model="user.complaint" required></textarea>
+            <span ng-show="complaintForm.complaint.$touched && complaintForm.complaint.$invalid">Complaint is required.</span>
+            <br>
+            <button type="submit" ng-disabled="complaintForm.$invalid">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+CSS (styles.css):
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.header {
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.content {
+    margin: 2em auto;
+    width: 80%;
+    background-color: white;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #cccccc;
+}
+AngularJS (app.js):
+javascript
+Copy code
+angular.module('complaintApp', [])
+.controller('FormController', function($scope) {
+    $scope.user = {};
+
+    $scope.submitForm = function() {
+        if ($scope.complaintForm.$valid) {
+            alert('Complaint submitted successfully!');
+        }
+    };
+});
+13. Cake Shop with HTML, CSS, and AngularJS
+HTML (index.html):
+html
+Copy code
+<!DOCTYPE html>
+<html ng-app="cakeShopApp">
+<head>
+    <title>Cake Shop</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Order Your Favorite Cake</h1>
+    </div>
+    <div class="content">
+        <form name="cakeForm" ng-submit="submitForm()" novalidate>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" ng-model="user.name" required>
+            <span ng-show="cakeForm.name.$touched && cakeForm.name.$invalid">Name is required.</span>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" ng-model="user.email" required>
+            <span ng-show="cakeForm.email.$touched && cakeForm.email.$invalid">Valid email is required.</span>
+            <br>
+            <label for="cakeType">Cake Type:</label>
+            <select id="cakeType" name="cakeType" ng-model="user.cakeType" required>
+                <option value="">Select Cake Type</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="vanilla">Vanilla</option>
+                <option value="strawberry">Strawberry</option>
+            </select>
+            <span ng-show="cakeForm.cakeType.$touched && cakeForm.cakeType.$invalid">Cake type is required.</span>
+            <br>
+            <button type="submit" ng-disabled="cakeForm.$invalid">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+CSS (styles.css):
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.header {
+    background-color: #ff9800;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.content {
+    margin: 2em auto;
+    width: 80%;
+    background-color: white;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+input, select, button {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #cccccc;
+}
+AngularJS (app.js):
+javascript
+Copy code
+angular.module('cakeShopApp', [])
+.controller('FormController', function($scope) {
+    $scope.user = {};
+
+    $scope.submitForm = function() {
+        if ($scope.cakeForm.$valid) {
+            alert('Order placed successfully!');
+        }
+    };
+});
